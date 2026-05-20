@@ -1,0 +1,8 @@
+@import "tailwindcss";
+
+/* Si no te funciona el @import, prueba con la sintaxis antigua: */
+/*
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+*/

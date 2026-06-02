@@ -57,35 +57,35 @@ const ScrollReveal = ({ children, direction = 'up', delay = 0, className = '', o
 const provinciasEcuador = [
   { 
     id: 'imbabura', name: 'Imbabura', active: true, color: 'emerald', top: '16%', left: '46%',
-    flag: 'src/assets/flags/bandera-imbabura.png',
+    flag: '/assets/flags/bandera-imbabura.png',
     description: 'Se caracteriza por su impresionante riqueza natural, su gran diversidad cultural, sus artesanías y su gastronomía tradicional.',
     cantons: [
-      { name: 'Otavalo', flag: 'src/assets/flags/bandera-otavalo.png' },
-      { name: 'Ibarra', flag: 'src/assets/flags/bandera-ibarra.png' }
+      { name: 'Otavalo', flag: '/assets/flags/bandera-otavalo.png' },
+      { name: 'Ibarra', flag: '/assets/flags/bandera-ibarra.png' }
     ]
   },
   { 
     id: 'pichincha', name: 'Pichincha', active: true, color: 'cyan', top: '28%', left: '46%',
-    flag: 'src/assets/flags/bandera-pichincha.png',
+    flag: '/assets/flags/bandera-pichincha.png',
     description: 'La provincia de Pichincha se caracteriza por albergar a Quito, la capital nacional. Es el corazón político, histórico y económico del país.',
     cantons: [
-      { name: 'Quito', flag: 'src/assets/flags/bandera-quito.png' }
+      { name: 'Quito', flag: '/assets/flags/bandera-quito.png' }
     ]
   },
   { 
     id: 'manabi', name: 'Manabí', active: true, color: 'blue', top: '42%', left: '22%',
-    flag: 'src/assets/flags/bandera-manabí.png',
+    flag: '/assets/flags/bandera-manabí.png',
     description: 'Se destaca principalmente por su exquisita gastronomía, sus extensas playas turísticas y su rica identidad cultural montubia y chola.',
     cantons: [
-      { name: 'Jipijapa', flag: 'src/assets/flags/bandera-jipijapa.png' }
+      { name: 'Jipijapa', flag: '/assets/flags/bandera-jipijapa.png' }
     ]
   },
   { 
     id: 'azuay', name: 'Azuay', active: true, color: 'pink', top: '72%', left: '42%',
-    flag: 'src/assets/flags/bandera-azuay.png',
+    flag: '/assets/flags/bandera-azuay.png',
     description: 'Se caracteriza por su rica herencia colonial, su impresionante diversidad natural y su fuerte vocación artesanal e industrial.',
     cantons: [
-      { name: 'Cuenca', flag: 'src/assets/flags/bandera-cuenca.png' }
+      { name: 'Cuenca', flag: '/assets/flags/bandera-cuenca.png' }
     ]
   },
   
@@ -218,7 +218,7 @@ export default function App() {
           
           <div className="flex items-center gap-3 cursor-pointer">
             <img 
-              src="src/assets/logo_raji_ecuador.png" 
+              src="/assets/logo_raji_ecuador.png" 
               alt="Logo RAJI" 
               className="h-10 w-10 object-cover rounded-xl border border-cyan-500/30"
               onError={(e) => { e.target.src = 'https://via.placeholder.com/150?text=RAJI'; }}
@@ -808,7 +808,7 @@ export default function App() {
               <div>
                 <div className="flex items-center gap-3 mb-4">
                   <img 
-                    src="src/assets/logo_raji_ecuador.png" 
+                    src="/assets/logo_raji_ecuador.png" 
                     alt="Logo RAJI" 
                     className="h-8 w-8 object-cover rounded-md border border-cyan-500/30"
                     onError={(e) => { e.target.src = 'https://via.placeholder.com/150?text=RAJI'; }}

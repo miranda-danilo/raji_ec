@@ -6,9 +6,12 @@ import {
   ShieldCheck, MonitorSmartphone, Megaphone, 
   Landmark, Palette, UserCheck, MessageCircle, Phone,
   MapPin, Navigation, Info, Layers, UserCog, Users2, Star,
-  Calendar, ChevronDown, ChevronUp
+  Calendar, ChevronDown
 } from 'lucide-react';
 
+/* =========================================
+   COMPONENTE DE ANIMACIÓN (SCROLL REVEAL)
+   ========================================= */
 const ScrollReveal = ({ children, direction = 'up', delay = 0, className = '', once = true }) => {
   const [isVisible, setIsVisible] = useState(false);
   const domRef = useRef();
@@ -54,42 +57,44 @@ const ScrollReveal = ({ children, direction = 'up', delay = 0, className = '', o
   );
 };
 
+/* =========================================
+   BASE DE DATOS: PROVINCIAS CON BANDERAS
+   ========================================= */
 const provinciasEcuador = [
   { 
     id: 'imbabura', name: 'Imbabura', active: true, color: 'emerald', top: '16%', left: '46%',
-    flag: '/assets/flags/bandera-imbabura.png',
-    description: 'Se caracteriza por su impresionante riqueza natural, su gran diversidad cultural, sus artesanías y su gastronomía tradicional.',
+    flag: 'src/assets/flags/bandera-imbabura.png',
+    description: 'Coordinación norte enfocada en interculturalidad, desarrollo comunitario y derechos humanos.',
     cantons: [
-      { name: 'Otavalo', flag: '/assets/flags/bandera-otavalo.png' },
-      { name: 'Ibarra', flag: '/assets/flags/bandera-ibarra.png' }
+      { name: 'Otavalo', flag: 'src/assets/flags/bandera-otavalo.png' },
+      { name: 'Ibarra', flag: 'src/assets/flags/bandera-ibarra.png' }
     ]
   },
   { 
     id: 'pichincha', name: 'Pichincha', active: true, color: 'cyan', top: '28%', left: '46%',
-    flag: '/assets/flags/bandera-pichincha.png',
-    description: 'La provincia de Pichincha se caracteriza por albergar a Quito, la capital nacional. Es el corazón político, histórico y económico del país.',
+    flag: 'src/assets/flags/bandera-pichincha.png',
+    description: 'Coordinación de enlace gubernamental, debates de gestión pública y proyectos de innovación política.',
     cantons: [
-      { name: 'Quito', flag: '/assets/flags/bandera-quito.png' }
+      { name: 'Quito', flag: 'src/assets/flags/bandera-quito.png' }
     ]
   },
   { 
     id: 'manabi', name: 'Manabí', active: true, color: 'blue', top: '42%', left: '22%',
-    flag: '/assets/flags/bandera-manabí.png',
-    description: 'Se destaca principalmente por su exquisita gastronomía, sus extensas playas turísticas y su rica identidad cultural montubia y chola.',
+    flag: 'src/assets/flags/bandera-manabí.png',
+    description: 'Sede central de coordinación, enfocada en desarrollo sostenible costero y liderazgo juvenil.',
     cantons: [
-      { name: 'Jipijapa', flag: '/assets/flags/bandera-jipijapa.png' }
+      { name: 'Jipijapa', flag: 'src/assets/flags/bandera-jipijapa.png' }
     ]
   },
   { 
     id: 'azuay', name: 'Azuay', active: true, color: 'pink', top: '72%', left: '42%',
-    flag: '/assets/flags/bandera-azuay.png',
-    description: 'Se caracteriza por su rica herencia colonial, su impresionante diversidad natural y su fuerte vocación artesanal e industrial.',
+    flag: 'src/assets/flags/bandera-azuay.png',
+    description: 'Centro de desarrollo cultural, arte para el cambio social y promoción de los derechos humanos.',
     cantons: [
-      { name: 'Cuenca', flag: '/assets/flags/bandera-cuenca.png' }
+      { name: 'Cuenca', flag: 'src/assets/flags/bandera-cuenca.png' }
     ]
   },
-  
-  // Provincias Próximamente
+  // Provincias Próximamente (Zonas Disponibles para Postulación)
   { id: 'carchi', name: 'Carchi', active: false, top: '10%', left: '50%' },
   { id: 'esmeraldas', name: 'Esmeraldas', active: false, top: '15%', left: '26%' },
   { id: 'sucumbios', name: 'Sucumbíos', active: false, top: '18%', left: '68%' },
@@ -111,91 +116,52 @@ const provinciasEcuador = [
   { id: 'galapagos', name: 'Galápagos', active: false, top: '10%', left: '8%', isIsland: true }
 ];
 
+/* =========================================
+   BASE DE DATOS: PROYECTOS DESTACADOS
+   ========================================= */
 const proyectosRAJI = [
   {
     id: 1,
-    title: "Escuela de Liderazgo (Movilidad Humana)",
-    objective: "Enseñar habilidades blandas y de liderazgo a jóvenes refugiados o migrantes, contribuyendo a su inserción y participación activa en Ecuador.",
-    collaborators: ["HIAS", "ACNUR"],
-    beneficiaries: "Jóvenes en movilidad humana (18 a 29 años)",
-    location: "Híbrida",
-    activities: "Talleres formativos e integración",
+    title: "Economía Circular y Calidad del Agua",
+    objective: "Valorización de residuos orgánicos para la mejora de la calidad del agua. Ponencia magistral a cargo del MSc. Jean Piere Quiliche.",
+    collaborators: ["Kuyana"],
+    beneficiaries: "Jóvenes investigadores y público en general",
+    location: "Virtual (Meet)",
+    image: "src/assets/raji1.jpg",
     icon: <Globe size={24} />,
     color: "blue"
   },
   {
     id: 2,
-    title: "Política, Democracia y Control Ciudadano",
-    objective: "Fomentar la participación y fiscalización ciudadana en los jóvenes para promover la transparencia y la incidencia en los procesos estatales.",
-    collaborators: ["CPCCS Imbabura"],
-    beneficiaries: "Adolescentes y jóvenes (13 a 29 años)",
-    location: "Virtual",
-    activities: "Cuatro talleres interactivos",
-    icon: <Landmark size={24} />,
-    color: "cyan"
-  },
-  {
-    id: 3,
-    title: "Voluntariado de Cuidado Animal",
-    objective: "Concientizar e incentivar el cuidado de la fauna urbana en la provincia de Imbabura.",
-    collaborators: ["Dogs Care"],
-    beneficiaries: "Animales rescatados",
-    location: "Atuntaqui",
-    activities: "Voluntariado directo y creación de contenido",
-    icon: <HeartHandshake size={24} />,
-    color: "emerald"
-  },
-  {
-    id: 4,
-    title: "Escuela de Debate",
-    objective: "Potenciar una aptitud crítica en los jóvenes mediante el debate, contribuyendo al desarrollo académico y la oratoria.",
-    collaborators: ["FEUPS"],
-    beneficiaries: "Estudiantes universitarios",
-    location: "Quito",
-    activities: "Oratoria, argumentación y debate",
-    icon: <BookOpen size={24} />,
-    color: "cyan"
-  },
-  {
-    id: 5,
-    title: "Voces que Transforman",
-    objective: "Fortalecer la oratoria, el liderazgo y la conciencia social, promoviendo la participación activa como agentes de cambio.",
-    collaborators: ["UC"],
-    beneficiaries: "Jóvenes líderes locales",
-    location: "Quito",
-    activities: "Formación en desafíos juveniles",
-    icon: <Megaphone size={24} />,
-    color: "pink"
-  },
-  {
-    id: 6,
-    title: "Café Party Juntos",
-    objective: "Generar espacios seguros de integración, diálogo y networking juvenil para fortalecer lazos comunitarios.",
-    collaborators: ["Comunidad Local"],
-    beneficiaries: "Juventud de Imbabura",
-    location: "Ibarra y Cotacachi",
-    activities: "Encuentros presenciales",
+    title: "I Seminario Internacional Liderazgo Juvenil",
+    objective: "Abordar temáticas cruciales de Liderazgo, Diplomacia, Salud Mental y Sostenibilidad junto a expertos internacionales.",
+    collaborators: ["LICAM-J", "Psicólogos sin barreras", "Ojo Abierto", "Alma Educativa"],
+    beneficiaries: "Jóvenes líderes de Ecuador, Colombia y Rusia",
+    location: "Virtual (Zoom)",
+    image: "src/assets/raji2.jpg",
     icon: <Users size={24} />,
     color: "emerald"
   },
   {
-    id: 7,
-    title: "Página Web Institucional",
-    objective: "Proyectar formalismo, difundir las acciones realizadas y contribuir a la conformación de alianzas estratégicas globales.",
-    collaborators: ["Danilo Miranda", "RAJI Ecuador"],
-    beneficiaries: "Comunidad RAJI y público en general",
-    location: "Virtual",
-    activities: "Desarrollo y diseño UX/UI",
-    icon: <MonitorSmartphone size={24} />,
-    color: "blue"
+    id: 3,
+    title: "Conversatorio: Consulta Popular",
+    objective: "Comprendiendo las preguntas de la consulta popular. Espacio de análisis político y jurídico con expertos en derecho.",
+    collaborators: ["La Politeka"],
+    beneficiaries: "Ciudadanía y Jóvenes",
+    location: "Virtual (Zoom)",
+    image: "src/assets/raji3.jpg",
+    icon: <Landmark size={24} />,
+    color: "cyan"
   }
 ];
 
+/* =========================================
+   COMPONENTE PRINCIPAL (APP)
+   ========================================= */
 export default function App() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [activeProv, setActiveProv] = useState(provinciasEcuador[0]);
-  const [showAllProjects, setShowAllProjects] = useState(false);
 
   useEffect(() => {
     document.documentElement.style.backgroundColor = '#020b14';
@@ -218,7 +184,7 @@ export default function App() {
           
           <div className="flex items-center gap-3 cursor-pointer">
             <img 
-              src="/assets/logo_raji_ecuador.png" 
+              src="src/assets/logo_raji_ecuador.png" 
               alt="Logo RAJI" 
               className="h-10 w-10 object-cover rounded-xl border border-cyan-500/30"
               onError={(e) => { e.target.src = 'https://via.placeholder.com/150?text=RAJI'; }}
@@ -252,7 +218,7 @@ export default function App() {
           <div className="lg:hidden absolute top-full left-0 w-full bg-[#031120] flex flex-col p-6 gap-4 shadow-2xl">
             <a href="#nosotros" onClick={() => setMobileMenuOpen(false)} className="text-slate-200 font-semibold text-lg p-2 hover:text-cyan-400">Nosotros</a>
             <a href="#estructura" onClick={() => setMobileMenuOpen(false)} className="text-slate-200 font-semibold text-lg p-2 hover:text-cyan-400">Estructura</a>
-            <a href="#cobertura" onClick={() => setMobileMenuOpen(false)} className="text-cyan-400 font-semibold text-lg p-2 hover:text-cyan-300">Cobertura Nacional</a>
+            <a href="#cobertura" onClick={() => setMobileMenuOpen(false)} className="text-cyan-400 font-semibold text-lg p-2 hover:text-cyan-300">Cobertura</a>
             <a href="#proyectos" onClick={() => setMobileMenuOpen(false)} className="text-slate-200 font-semibold text-lg p-2 hover:text-cyan-400">Proyectos</a>
             <a href="#alianzas" onClick={() => setMobileMenuOpen(false)} className="text-slate-200 font-semibold text-lg p-2 hover:text-cyan-400">Alianzas</a>
             <a href="#unete" onClick={() => setMobileMenuOpen(false)} className="bg-cyan-600 text-white px-6 py-3 rounded-xl font-bold text-center mt-2">Únete a RAJI</a>
@@ -260,7 +226,7 @@ export default function App() {
         )}
       </nav>
 
-      {/* 1. HERO / PORTADA */}
+      {/* HERO / PORTADA */}
       <section className="relative min-h-[90vh] flex items-center pt-20 overflow-hidden w-full">
         <div className="absolute top-0 left-1/4 w-[400px] h-[400px] bg-cyan-600/10 rounded-full blur-[120px] -translate-y-1/2 pointer-events-none"></div>
         <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-emerald-600/10 rounded-full blur-[120px] translate-y-1/3 translate-x-1/3 pointer-events-none"></div>
@@ -308,9 +274,10 @@ export default function App() {
         </div>
       </section>
 
+      {/* CONTENIDO PRINCIPAL ENGLOBADO EN ETIQUETA MAIN PARA EVITAR ERRORES */}
       <main className="flex-grow w-full">
         
-        {/* 2 & 3. QUIÉNES SOMOS Y VISIÓN */}
+        {/* QUIÉNES SOMOS Y VISIÓN */}
         <section id="nosotros" className="py-20 relative bg-[#041527] w-full border-b border-cyan-900/30">
           <div className="absolute top-0 left-0 w-full h-[1px] bg-gradient-to-r from-transparent via-cyan-800 to-transparent"></div>
           
@@ -353,7 +320,7 @@ export default function App() {
           </div>
         </section>
 
-        {/* ESTRUCTURA ORGANIZACIONAL */}
+        {/* ESTRUCTURA ORGANIZACIONAL (NUEVO REQUERIMIENTO) */}
         <section id="estructura" className="py-24 relative bg-[#020b14] w-full overflow-hidden">
           <div className="container mx-auto px-6 md:px-12 relative z-10">
             <ScrollReveal direction="up" delay={100}>
@@ -428,7 +395,7 @@ export default function App() {
           </div>
         </section>
 
-        {/* MAPA DE COBERTURA NACIONAL (INTERACTIVO) */}
+        {/* MAPA DE COBERTURA NACIONAL E INTERACTIVO + BOTÓN POSTULARME */}
         <section id="cobertura" className="py-24 relative bg-[#041527] w-full overflow-hidden border-y border-cyan-900/30">
           <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-emerald-600/10 rounded-full blur-[150px] -translate-y-1/2 -translate-x-1/2 pointer-events-none"></div>
           
@@ -560,6 +527,7 @@ export default function App() {
                             <Target size={16}/> Cantones con Presencia
                           </h4>
                           <div className="flex flex-wrap gap-3">
+                            {/* Banderas y nombres de los Cantones */}
                             {activeProv.cantons.map((canton, index) => (
                               <span key={index} className="px-4 py-2 bg-[#020b14] border border-slate-700 rounded-xl text-slate-200 font-semibold shadow-md flex items-center gap-3 hover:border-cyan-700 transition-colors cursor-default group">
                                 {canton.flag ? (
@@ -579,7 +547,7 @@ export default function App() {
                         </div>
                       </>
                     ) : (
-                      // Bloque para provincias inactivas con Botón de Postulación
+                      // BLOQUE PARA ZONAS DISPONIBLES: Botón para Postularse
                       <div className="bg-[#020b14] border border-slate-800 rounded-2xl p-8 text-center mt-4 shadow-inner">
                         <Users2 size={40} className="text-cyan-600 mx-auto mb-4" />
                         <h4 className="text-2xl font-bold text-white mb-3">¡Lidera RAJI en {activeProv.name}!</h4>
@@ -605,7 +573,7 @@ export default function App() {
           </div>
         </section>
 
-        {/* 4. OBJETIVOS ESTRATÉGICOS */}
+        {/* OBJETIVOS ESTRATÉGICOS (CON ANIMACIÓN HOVER) */}
         <section id="objetivos" className="py-20 relative bg-[#020b14] w-full">
           <div className="container mx-auto px-6 md:px-12 relative z-10">
             <ScrollReveal direction="up" delay={100}>
@@ -624,56 +592,36 @@ export default function App() {
           </div>
         </section>
 
-        {/* =========================================
-            NUEVA SECCIÓN: PORTAFOLIO DE PROYECTOS
-            ========================================= */}
+        {/* PROYECTOS DESTACADOS (NUEVO REQUERIMIENTO - 3 CARDS CON IMAGEN) */}
         <section id="proyectos" className="py-24 bg-[#041527] border-y border-cyan-900/30 w-full relative">
-          <div className="absolute top-0 right-0 w-[400px] h-[400px] bg-cyan-600/5 rounded-full blur-[100px] pointer-events-none"></div>
+          <div className="absolute top-0 left-0 w-[400px] h-[400px] bg-blue-600/5 rounded-full blur-[100px] pointer-events-none"></div>
           
           <div className="container mx-auto px-6 md:px-12 relative z-10">
             <ScrollReveal direction="up" delay={100}>
               <div className="flex flex-col md:flex-row justify-between items-end mb-12 gap-6">
                 <div className="max-w-2xl">
-                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-cyan-950/50 border border-cyan-800 text-cyan-400 font-semibold text-xs mb-4">
-                    <Award size={14} /> Proyectos Activos
+                  <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-blue-950/50 border border-blue-800 text-blue-400 font-semibold text-xs mb-4">
+                    <Award size={14} /> Impacto en Acción
                   </div>
-                  <h2 className="text-3xl md:text-5xl font-extrabold text-white tracking-tight">Impacto en Acción</h2>
+                  <h2 className="text-3xl md:text-5xl font-extrabold text-white tracking-tight">Proyectos Destacados</h2>
                   <p className="text-slate-400 font-medium mt-4 text-lg">
-                    Conoce las iniciativas que nuestros líderes están desarrollando en territorio para generar un cambio real y tangible.
+                    Conoce nuestros seminarios, conversatorios y talleres más recientes diseñados para empoderar a la juventud y a la sociedad civil.
                   </p>
                 </div>
               </div>
             </ScrollReveal>
 
-            {/* Grid de Proyectos (Muestra 3 por defecto, o todos si showAllProjects es true) */}
-            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-10 transition-all duration-500">
-              {(showAllProjects ? proyectosRAJI : proyectosRAJI.slice(0, 3)).map((proyecto, index) => (
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+              {proyectosRAJI.map((proyecto, index) => (
                 <ScrollReveal key={proyecto.id} direction="up" delay={index * 100}>
                   <ProjectCard project={proyecto} />
                 </ScrollReveal>
               ))}
             </div>
-
-            {/* Botón Expansible para ver todos los proyectos */}
-            <ScrollReveal direction="up" delay={200}>
-              <div className="flex justify-center mt-8">
-                <button 
-                  onClick={() => setShowAllProjects(!showAllProjects)}
-                  className="group flex items-center gap-2 bg-[#020b14] border border-cyan-800 hover:border-cyan-400 text-cyan-400 px-8 py-3.5 rounded-full font-bold transition-all shadow-[0_0_15px_rgba(6,182,212,0.1)] hover:shadow-[0_0_20px_rgba(6,182,212,0.3)] hover:-translate-y-1"
-                >
-                  {showAllProjects ? 'Ver menos proyectos' : 'Explorar todos los proyectos'}
-                  {showAllProjects ? (
-                    <ChevronUp size={20} className="group-hover:-translate-y-1 transition-transform" />
-                  ) : (
-                    <ChevronDown size={20} className="group-hover:translate-y-1 transition-transform" />
-                  )}
-                </button>
-              </div>
-            </ScrollReveal>
           </div>
         </section>
 
-        {/* 6, 7 & 8. VOLUNTARIADO, POR QUÉ UNIRSE Y PILARES */}
+        {/* VOLUNTARIADO, POR QUÉ UNIRSE Y PILARES */}
         <section className="py-20 bg-[#020b14] relative w-full">
           <div className="container mx-auto px-6 md:px-12">
             
@@ -688,7 +636,7 @@ export default function App() {
                   <span className="text-emerald-400 font-bold tracking-widest uppercase text-sm mb-2 block">¿Qué es ser Voluntario?</span>
                   <h3 className="text-2xl font-extrabold text-white mb-3">100% Compromiso Activo</h3>
                   <p className="text-slate-300 leading-relaxed font-medium">
-                    Ser voluntario implica dedicar tiempo y habilidades para un impacto real. Adquiere experiencia, suma valor a tu CV y contribuye al bienestar de tu comunidad.
+                    Ser voluntario implica dedicar tiempo y habilidades para un impacto real. Adquiere experiencia y contribuye al bienestar colectivo.
                   </p>
                 </div>
               </div>
@@ -699,8 +647,8 @@ export default function App() {
                 <div>
                   <h2 className="text-3xl font-extrabold text-white mb-8">¿Por qué unirse a RAJI?</h2>
                   <div className="space-y-4">
-                    <BenefitRow icon={<TrendingUp size={24}/>} title="Crecimiento Profesional" desc="Acceso a talleres, conferencias y mentorías exclusivas." />
-                    <BenefitRow icon={<Target size={24}/>} title="Networking de Élite" desc="Conexión directa con organizaciones, universidades y líderes mundiales." />
+                    <BenefitRow icon={<TrendingUp size={24}/>} title="Crecimiento Profesional" desc="Acceso a talleres, conferencias y mentorías." />
+                    <BenefitRow icon={<Target size={24}/>} title="Networking de Élite" desc="Conexión directa con organizaciones y líderes mundiales." />
                   </div>
                 </div>
               </ScrollReveal>
@@ -720,7 +668,7 @@ export default function App() {
           </div>
         </section>
 
-        {/* 9. COMPROMISO ODS */}
+        {/* COMPROMISO ODS (CON VENTANAS INFORMATIVAS HOVER) */}
         <section id="ods" className="py-20 bg-[#041527] relative border-y border-cyan-900/30 w-full">
           <div className="container mx-auto px-6 md:px-12 relative z-10">
             <ScrollReveal direction="up" delay={100}>
@@ -742,7 +690,7 @@ export default function App() {
           </div>
         </section>
 
-        {/* 10. ALIANZAS ESTRATÉGICAS */}
+        {/* ALIANZAS ESTRATÉGICAS */}
         <section id="alianzas" className="py-24 bg-[#020b14] relative w-full overflow-hidden">
           <div className="absolute top-0 right-0 w-[600px] h-[600px] bg-cyan-900/10 rounded-full blur-[150px] pointer-events-none"></div>
           
@@ -751,7 +699,7 @@ export default function App() {
               <div className="text-center max-w-3xl mx-auto mb-16">
                 <h2 className="text-4xl md:text-5xl font-extrabold text-white mb-6">Alianzas Estratégicas</h2>
                 <p className="text-lg text-slate-300 font-medium mb-8">
-                  Colaboramos con Gobiernos Locales, Entidades Públicas y Universidades para potenciar el impacto de nuestros miembros.
+                  Colaboramos con las instituciones y organizaciones más prestigiosas para potenciar el impacto de nuestros miembros.
                 </p>
                 <div className="h-1 w-24 bg-gradient-to-r from-cyan-500 to-emerald-500 mx-auto rounded-full"></div>
               </div>
@@ -763,15 +711,16 @@ export default function App() {
               <ScrollReveal direction="up" delay={300}><AllianceBadge name="UPF - ONU" highlight color="cyan" /></ScrollReveal>
               <ScrollReveal direction="up" delay={400}><AllianceBadge name="Universidad ESAN" /></ScrollReveal>
               <ScrollReveal direction="up" delay={500}><AllianceBadge name="Cámara de Comercio" /></ScrollReveal>
-              <ScrollReveal direction="up" delay={600}><AllianceBadge name="Municipalidades" /></ScrollReveal>
+              <ScrollReveal direction="up" delay={600}><AllianceBadge name="Municipalidad" /></ScrollReveal>
               <ScrollReveal direction="up" delay={700}><AllianceBadge name="Asamblea Nacional" /></ScrollReveal>
               <ScrollReveal direction="up" delay={800}><AllianceBadge name="Rotary Club" /></ScrollReveal>
             </div>
           </div>
         </section>
+
       </main>
 
-      {/* 11 & 12. CALL TO ACTION Y FOOTER */}
+      {/* CALL TO ACTION Y FOOTER */}
       <footer id="unete" className="bg-[#01060b] text-white pt-24 pb-8 mt-10 relative border-t border-cyan-900/20 w-full shrink-0">
         
         <div className="container mx-auto px-6 md:px-12 absolute left-0 right-0 top-0 -translate-y-1/2">
@@ -784,8 +733,13 @@ export default function App() {
                 Únete a nuestra comunidad y represéntala dentro de tu colegio o universidad.
               </p>
               <div className="flex flex-col sm:flex-row justify-center items-center gap-4 relative z-10">
-                <a href="https://docs.google.com/forms/d/e/1FAIpQLSdU-bvvFQMZ-eQq5j4l8giV6S_lrGChs9huZ1IMijlCFV577w/viewform?usp=sharing&ouid=100037291006540345139" target="_blank" rel="noopener noreferrer" className="bg-cyan-600 text-white font-bold px-8 py-3 rounded-full hover:bg-cyan-500 transition-colors shadow-lg flex items-center justify-center gap-2">
-                  POSTULARME A RAJI <ArrowRight size={18} />
+                <a 
+                  href="https://docs.google.com/forms/d/e/1FAIpQLSdU-bvvFQMZ-eQq5j4l8giV6S_lrGChs9huZ1IMijlCFV577w/viewform?usp=sharing&ouid=100037291006540345139" 
+                  target="_blank" 
+                  rel="noopener noreferrer" 
+                  className="bg-cyan-600 text-white font-bold px-8 py-3 rounded-full hover:bg-cyan-500 transition-colors shadow-lg flex items-center justify-center gap-2"
+                >
+                  ÚNETE A RAJI <ArrowRight size={18} />
                 </a>
                 <a 
                   href="https://wa.me/593980058762?text=Hola,%20me%20gustaría%20obtener%20más%20información%20sobre%20cómo%20unirme%20a%20RAJI%20Ecuador." 
@@ -808,7 +762,7 @@ export default function App() {
               <div>
                 <div className="flex items-center gap-3 mb-4">
                   <img 
-                    src="/assets/logo_raji_ecuador.png" 
+                    src="src/assets/logo_raji_ecuador.png" 
                     alt="Logo RAJI" 
                     className="h-8 w-8 object-cover rounded-md border border-cyan-500/30"
                     onError={(e) => { e.target.src = 'https://via.placeholder.com/150?text=RAJI'; }}
@@ -902,7 +856,7 @@ function RoleCard({ icon, level, title, desc, tasks }) {
   );
 }
 
-/* Tarjeta para la nueva sección de PROYECTOS */
+/* Tarjeta para Proyectos Destacados (Con Imagen de Portada) */
 function ProjectCard({ project }) {
   const colorMap = {
     cyan: 'text-cyan-400 bg-cyan-950/30 border-cyan-800 hover:border-cyan-400',
@@ -919,51 +873,59 @@ function ProjectCard({ project }) {
   };
 
   return (
-    <div className={`flex flex-col h-full bg-[#020b14] border border-slate-800 rounded-3xl p-6 transition-all duration-300 hover:-translate-y-2 group hover:shadow-2xl ${colorMap[project.color].split(' bg-')[0]} hover:border-${project.color}-500/50`}>
+    <div className={`flex flex-col h-full bg-[#020b14] border border-slate-800 rounded-3xl overflow-hidden transition-all duration-300 hover:-translate-y-2 group hover:shadow-2xl hover:border-${project.color}-500/50`}>
       
-      {/* Cabecera Tarjeta: Icono y Ubicación */}
-      <div className="flex justify-between items-start mb-5">
-        <div className={`p-3 rounded-2xl border transition-all duration-300 group-hover:scale-110 ${colorMap[project.color]}`}>
+      {/* Imagen / Portada */}
+      <div className="w-full h-56 overflow-hidden relative border-b border-slate-800 bg-[#031120]">
+        <img 
+          src={project.image} 
+          alt={project.title} 
+          className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110"
+          onError={(e) => { e.target.src = 'https://via.placeholder.com/400x300?text=Proyecto+RAJI'; }}
+        />
+        {/* Capa oscura para que resalte el texto e ícono */}
+        <div className="absolute inset-0 bg-gradient-to-t from-[#020b14] via-[#020b14]/20 to-transparent opacity-90"></div>
+        
+        {/* Icono Flotante */}
+        <div className={`absolute bottom-4 right-4 p-2.5 rounded-xl border backdrop-blur-md ${colorMap[project.color]}`}>
           {project.icon}
         </div>
-        <div className="flex items-center gap-1.5 bg-slate-900 text-slate-400 px-3 py-1.5 rounded-full text-xs font-semibold border border-slate-800">
-          <MapPin size={12} /> {project.location}
-        </div>
       </div>
 
-      {/* Título y Objetivo */}
-      <h3 className="text-xl font-bold text-white mb-3 leading-snug group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-white group-hover:to-slate-400 transition-all">
-        {project.title}
-      </h3>
-      <p className="text-slate-400 text-sm leading-relaxed mb-6 flex-grow font-medium">
-        {project.objective}
-      </p>
+      <div className="p-6 flex flex-col flex-grow relative z-10 -mt-8">
+        <div className="flex items-center gap-1.5 bg-slate-900 w-max text-slate-300 px-3 py-1.5 rounded-full text-xs font-semibold border border-slate-700 mb-4 shadow-lg">
+          <MapPin size={12} className={project.color === 'emerald' ? 'text-emerald-400' : project.color === 'cyan' ? 'text-cyan-400' : 'text-blue-400'} /> {project.location}
+        </div>
 
-      {/* Detalles Inferiores */}
-      <div className="space-y-3 pt-4 border-t border-slate-800 mt-auto">
+        <h3 className="text-xl font-bold text-white mb-3 leading-snug group-hover:text-cyan-400 transition-colors">
+          {project.title}
+        </h3>
         
-        {/* Beneficiarios */}
-        <div className="flex items-start gap-2">
-          <Users size={16} className="text-slate-500 mt-0.5 shrink-0" />
-          <div className="text-xs">
-            <span className="text-slate-500 block mb-0.5 font-semibold">Beneficiarios:</span>
-            <span className="text-slate-300">{project.beneficiaries}</span>
-          </div>
-        </div>
+        <p className="text-slate-400 text-sm leading-relaxed mb-6 flex-grow font-medium">
+          {project.objective}
+        </p>
 
-        {/* Colaboradores (Tags) */}
-        <div className="flex items-start gap-2 pt-1">
-          <HeartHandshake size={16} className="text-slate-500 mt-0.5 shrink-0" />
-          <div className="flex flex-wrap gap-1.5 w-full">
-            {project.collaborators.map((colab, idx) => (
-              <span key={idx} className={`text-[10px] font-bold px-2 py-0.5 rounded border uppercase tracking-wider ${badgeColorMap[project.color]}`}>
-                {colab}
-              </span>
-            ))}
+        <div className="space-y-3 pt-4 border-t border-slate-800 mt-auto">
+          <div className="flex items-start gap-2">
+            <Users size={16} className="text-slate-500 mt-0.5 shrink-0" />
+            <div className="text-xs">
+              <span className="text-slate-500 block mb-0.5 font-semibold">Beneficiarios:</span>
+              <span className="text-slate-300">{project.beneficiaries}</span>
+            </div>
+          </div>
+
+          <div className="flex items-start gap-2 pt-1">
+            <HeartHandshake size={16} className="text-slate-500 mt-0.5 shrink-0" />
+            <div className="flex flex-wrap gap-1.5 w-full">
+              {project.collaborators.map((colab, idx) => (
+                <span key={idx} className={`text-[10px] font-bold px-2 py-0.5 rounded border uppercase tracking-wider ${badgeColorMap[project.color]}`}>
+                  {colab}
+                </span>
+              ))}
+            </div>
           </div>
         </div>
       </div>
-
     </div>
   );
 }

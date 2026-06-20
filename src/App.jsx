@@ -127,7 +127,7 @@ const proyectosRAJI = [
     collaborators: ["Kuyana"],
     beneficiaries: "Jóvenes investigadores y público en general",
     location: "Virtual (Meet)",
-    image: "src/assets/raji1.jpg",
+    image: "/assets/raji1.jpg",
     icon: <Globe size={24} />,
     color: "blue"
   },
@@ -138,7 +138,7 @@ const proyectosRAJI = [
     collaborators: ["LICAM-J", "Psicólogos sin barreras", "Ojo Abierto", "Alma Educativa"],
     beneficiaries: "Jóvenes líderes de Ecuador, Colombia y Rusia",
     location: "Virtual (Zoom)",
-    image: "src/assets/raji2.jpg",
+    image: "/assets/raji2.jpg",
     icon: <Users size={24} />,
     color: "emerald"
   },
@@ -149,7 +149,7 @@ const proyectosRAJI = [
     collaborators: ["La Politeka"],
     beneficiaries: "Ciudadanía y Jóvenes",
     location: "Virtual (Zoom)",
-    image: "src/assets/raji3.jpg",
+    image: "/assets/raji3.jpg",
     icon: <Landmark size={24} />,
     color: "cyan"
   }
@@ -705,16 +705,18 @@ export default function App() {
               </div>
             </ScrollReveal>
 
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-5xl mx-auto">
-              <ScrollReveal direction="up" delay={100}><AllianceBadge name="Jóvenes Juntos" highlight color="cyan" /></ScrollReveal>
-              <ScrollReveal direction="up" delay={200}><AllianceBadge name="FEUE" highlight color="emerald" /></ScrollReveal>
-              <ScrollReveal direction="up" delay={300}><AllianceBadge name="UPF - ONU" highlight color="cyan" /></ScrollReveal>
-              <ScrollReveal direction="up" delay={400}><AllianceBadge name="Universidad ESAN" /></ScrollReveal>
-              <ScrollReveal direction="up" delay={500}><AllianceBadge name="Cámara de Comercio" /></ScrollReveal>
-              <ScrollReveal direction="up" delay={600}><AllianceBadge name="Municipalidad" /></ScrollReveal>
-              <ScrollReveal direction="up" delay={700}><AllianceBadge name="Asamblea Nacional" /></ScrollReveal>
-              <ScrollReveal direction="up" delay={800}><AllianceBadge name="Rotary Club" /></ScrollReveal>
-            </div>
+           {/* Contenedor optimizado para 3 elementos */}
+<div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-3xl mx-auto">
+  <ScrollReveal direction="up" delay={100}>
+    <AllianceBadge name="Jóvenes Juntos" highlight color="cyan" />
+  </ScrollReveal>
+  <ScrollReveal direction="up" delay={200}>
+    <AllianceBadge name="FEUE" highlight color="emerald" />
+  </ScrollReveal>
+  <ScrollReveal direction="up" delay={300}>
+    <AllianceBadge name="UPF - ONU" highlight color="cyan" />
+  </ScrollReveal>
+</div>
           </div>
         </section>
 

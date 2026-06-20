@@ -63,35 +63,35 @@ const ScrollReveal = ({ children, direction = 'up', delay = 0, className = '', o
 const provinciasEcuador = [
   { 
     id: 'imbabura', name: 'Imbabura', active: true, color: 'emerald', top: '16%', left: '46%',
-    flag: 'src/assets/flags/bandera-imbabura.png',
+    flag: '/assets/flags/bandera-imbabura.png',
     description: 'Coordinación norte enfocada en interculturalidad, desarrollo comunitario y derechos humanos.',
     cantons: [
-      { name: 'Otavalo', flag: 'src/assets/flags/bandera-otavalo.png' },
-      { name: 'Ibarra', flag: 'src/assets/flags/bandera-ibarra.png' }
+      { name: 'Otavalo', flag: '/assets/flags/bandera-otavalo.png' },
+      { name: 'Ibarra', flag: '/assets/flags/bandera-ibarra.png' }
     ]
   },
   { 
     id: 'pichincha', name: 'Pichincha', active: true, color: 'cyan', top: '28%', left: '46%',
-    flag: 'src/assets/flags/bandera-pichincha.png',
+    flag: '/assets/flags/bandera-pichincha.png',
     description: 'Coordinación de enlace gubernamental, debates de gestión pública y proyectos de innovación política.',
     cantons: [
-      { name: 'Quito', flag: 'src/assets/flags/bandera-quito.png' }
+      { name: 'Quito', flag: '/assets/flags/bandera-quito.png' }
     ]
   },
   { 
     id: 'manabi', name: 'Manabí', active: true, color: 'blue', top: '42%', left: '22%',
-    flag: 'src/assets/flags/bandera-manabí.png',
+    flag: '/assets/flags/bandera-manabí.png',
     description: 'Sede central de coordinación, enfocada en desarrollo sostenible costero y liderazgo juvenil.',
     cantons: [
-      { name: 'Jipijapa', flag: 'src/assets/flags/bandera-jipijapa.png' }
+      { name: 'Jipijapa', flag: '/assets/flags/bandera-jipijapa.png' }
     ]
   },
   { 
     id: 'azuay', name: 'Azuay', active: true, color: 'pink', top: '72%', left: '42%',
-    flag: 'src/assets/flags/bandera-azuay.png',
+    flag: '/assets/flags/bandera-azuay.png',
     description: 'Centro de desarrollo cultural, arte para el cambio social y promoción de los derechos humanos.',
     cantons: [
-      { name: 'Cuenca', flag: 'src/assets/flags/bandera-cuenca.png' }
+      { name: 'Cuenca', flag: '/assets/flags/bandera-cuenca.png' }
     ]
   },
   // Provincias Próximamente (Zonas Disponibles para Postulación)
@@ -184,7 +184,7 @@ export default function App() {
           
           <div className="flex items-center gap-3 cursor-pointer">
             <img 
-              src="src/assets/logo_raji_ecuador.png" 
+              src="/assets/logo_raji_ecuador.png" 
               alt="Logo RAJI" 
               className="h-10 w-10 object-cover rounded-xl border border-cyan-500/30"
               onError={(e) => { e.target.src = 'https://via.placeholder.com/150?text=RAJI'; }}
@@ -764,7 +764,7 @@ export default function App() {
               <div>
                 <div className="flex items-center gap-3 mb-4">
                   <img 
-                    src="src/assets/logo_raji_ecuador.png" 
+                    src="/assets/logo_raji_ecuador.png" 
                     alt="Logo RAJI" 
                     className="h-8 w-8 object-cover rounded-md border border-cyan-500/30"
                     onError={(e) => { e.target.src = 'https://via.placeholder.com/150?text=RAJI'; }}

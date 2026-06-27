@@ -575,10 +575,10 @@ export default function App() {
                 <ProjectCard 
                   image="/assets/raji2.jpg"
                   title="Seminario de Liderazgo Juvenil"
-                  objective="Enseñar habilidades blandas y de liderazgo a jóvenes en movilidad humana para su inserción y participación activa."
-                  colab="HIAS y ACNUR"
-                  prov="Modalidad Híbrida"
-                  benef="Jóvenes (18 a 29 años)"
+                  objective="Enseñar habilidades blandas y de liderazgo a jóvenes proactivos para su inserción y participación activa en su comunidad."
+                  colab="LICAM-J y ALMA EDUCATIVA"
+                  prov="Modalidad Virtual (Via Zoom)"
+                  benef="Jóvenes"
                 />
               </ScrollReveal>
 
@@ -588,9 +588,9 @@ export default function App() {
                   image="/assets/raji3.jpg"
                   title="Jornada Virtual sobre Política"
                   objective="Fomentar la participación y fiscalización ciudadana, promoviendo la transparencia y la incidencia juvenil estatal."
-                  colab="CPCCS Imbabura"
-                  prov="Imbabura / Virtual"
-                  benef="Adolescentes (13 a 29 años)"
+                  colab="Abg. Sebastián Cedeño y Abg. Gabriella Guerrero"
+                  prov="Modalidad Virtual (Via Zoom)"
+                  benef="Adolescentes, Jóvenes y Ciudadanía en General"
                 />
               </ScrollReveal>
 
@@ -598,11 +598,11 @@ export default function App() {
               <ScrollReveal direction="up" delay={300}>
                 <ProjectCard 
                   image="/assets/raji1.jpg"
-                  title="Impacto Ambiental y Bienestar"
+                  title="Economía Circular"
                   objective="Concientizar e incentivar el cuidado de la fauna urbana y promover prácticas de economía circular en la comunidad."
-                  colab="Dogs Care / Aliados"
-                  prov="Atuntaqui, Imbabura"
-                  benef="Comunidad Local"
+                  colab="Kuyana y MSc. Jean Piere Quiliche"
+                  prov="Modalidad Virtual (Via Google Meet)"
+                  benef="Ciudadanía en General"
                 />
               </ScrollReveal>
 
